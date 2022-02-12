@@ -7,6 +7,9 @@ PyQt Video Player PIP Mode
 ## Setup
 ```pip3 install git+https://github.com/yjg30737/pyqt-video-player-pip-mode.git --upgrade```
 
+## Included Package
+* <a href="https://github.com/yjg30737/pyqt-resource-helper.git">pyqt-resource-helper</a>
+
 ## Feature
 * Frameless, movable.
 * When mouse cursor is hovering over the window, interface will be shown. 
