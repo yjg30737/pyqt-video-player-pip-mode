@@ -40,5 +40,7 @@ When mouse cursor leaves, interface will be invisible.
 
 ![image](https://user-images.githubusercontent.com/55078043/153712843-bdafd289-fefe-4978-94c5-66ec2cf4646d.png)
 
+Result video is preview of <a href="https://github.com/yjg30737/pyqt-textbox-graphics-widget.git">pyqt-textbox-graphics-widget</a>.
+
 ## Note
 This is very first version of the module so it can be crude. I'll improve it.
