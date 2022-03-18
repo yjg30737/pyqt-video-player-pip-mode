@@ -33,6 +33,8 @@ if __name__ == '__main__':
 
 Result
 
+Note: Interface is quite different back then.
+
 When mouse cursor is over the pip window, interface will be shown.
 
 ![image](https://user-images.githubusercontent.com/55078043/153712864-6e831c7d-d645-4ab5-81b5-c7ffa9a42517.png)
