@@ -9,6 +9,7 @@ PyQt Video Player PIP Mode
 
 ## Included Package
 * <a href="https://github.com/yjg30737/pyqt-resource-helper.git">pyqt-resource-helper</a>
+* <a href="https://github.com/yjg30737/pyqt-svg-icon-pushbutton.git">pyqt-svg-icon-pushbutton</a>
 
 ## Feature
 * Frameless, movable.
