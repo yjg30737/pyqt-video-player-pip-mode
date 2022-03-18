@@ -45,6 +45,7 @@ class PipVideoWidget(QWidget):
 
         self.__interfaceWidget.setVisible(False)
         self.__interfaceWidget.setMouseTracking(True)
+        self.__interfaceWidget.containsCursor.connect(self.__setRemainControlWidgetVisible)
 
         self.__mediaPlayer.positionChanged.connect(self.__updatePosition)
         self.__mediaPlayer.durationChanged.connect(self.__updateDuration)
@@ -106,6 +107,12 @@ class PipVideoWidget(QWidget):
     def __toggledInterfaceWidget(self):
         self.__timer.stop()
         self.__interfaceWidget.setVisible(False)
+
+    def __setRemainControlWidgetVisible(self, f):
+        if f:
+            self.__timer.timeout.disconnect()
+        else:
+            self.__timer.timeout.connect(self.__toggledInterfaceWidget)
 
     def setMediaPlayer(self, media_player):
         self.__mediaPlayer = media_player
