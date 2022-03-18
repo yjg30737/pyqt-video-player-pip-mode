@@ -1,10 +1,11 @@
-from PyQt5.QtCore import Qt
+from PyQt5.QtCore import Qt, pyqtSignal
 from PyQt5.QtWidgets import QWidget, QHBoxLayout, QVBoxLayout, QProgressBar, qApp
 from pyqt_resource_helper import PyQtResourceHelper
 from pyqt_svg_icon_pushbutton import SvgIconPushButton
 
 
 class PipInterfaceWidget(QWidget):
+    containsCursor = pyqtSignal(bool)
 
     def __init__(self):
         super().__init__()
@@ -95,3 +96,11 @@ class PipInterfaceWidget(QWidget):
 
     def getVideoProgressBar(self):
         return self.__videoProgressBar
+
+    def enterEvent(self, e):
+        self.containsCursor.emit(True)
+        return super().enterEvent(e)
+
+    def leaveEvent(self, e):
+        self.containsCursor.emit(False)
+        return super().leaveEvent(e)
