@@ -1,5 +1,5 @@
 from PyQt5.QtCore import Qt
-from PyQt5.QtWidgets import QWidget, QPushButton, QHBoxLayout, QVBoxLayout, QProgressBar
+from PyQt5.QtWidgets import QWidget, QPushButton, QHBoxLayout, QVBoxLayout, QProgressBar, qApp
 from pyqt_resource_helper import PyQtResourceHelper
 
 
@@ -12,6 +12,7 @@ class PipInterfaceWidget(QWidget):
 
     def __initVal(self):
         self.__returnToBigModeBtn = QPushButton()
+        self.__closeBtn = QPushButton('🗙')
         self.__playPauseBtn = QPushButton('⏸')
         self.__videoProgressBar = QProgressBar()
 
@@ -20,26 +21,40 @@ class PipInterfaceWidget(QWidget):
         self.setFixedSize(300, 200)
         self.setAttribute(Qt.WA_TranslucentBackground, True)
 
-        self.__returnToBigModeBtn.setMaximumSize(self.__returnToBigModeBtn.sizeHint())
+        self.__closeBtn.clicked.connect(qApp.exit)
 
         self.__playPauseBtn.setCheckable(True)
         self.__playPauseBtn.setChecked(False)
         self.__playPauseBtn.toggled.connect(self.__playPause)
-        self.__playPauseBtn.setMaximumSize(self.__playPauseBtn.sizeHint())
         self.__playPauseBtn.setShortcut('Space')
 
         self.__videoProgressBar.setTextVisible(False)
 
-        PyQtResourceHelper.setStyleSheet([self.__returnToBigModeBtn, self.__playPauseBtn], ['style/button.css'])
+        PyQtResourceHelper.setStyleSheet([self.__returnToBigModeBtn, self.__closeBtn, self.__playPauseBtn], ['style/button.css'])
         PyQtResourceHelper.setIcon([self.__returnToBigModeBtn], ['ico/window.png'])
+
+        self.__returnToBigModeBtn.setMaximumSize(self.__returnToBigModeBtn.sizeHint())
+        self.__closeBtn.setMaximumSize(self.__closeBtn.sizeHint())
 
         PyQtResourceHelper.setStyleSheet([self.__videoProgressBar], ['style/progressbar.css'])
 
         topWidget = QWidget()
+
+        topLeftLay = QHBoxLayout()
+        topLeftLay.setAlignment(Qt.AlignTop | Qt.AlignLeft)
+        topLeftLay.addWidget(self.__returnToBigModeBtn)
+        topLeftLay.setContentsMargins(2, 2, 2, 0)
+
+        topRightLay = QHBoxLayout()
+        topRightLay.setAlignment(Qt.AlignTop | Qt.AlignRight)
+        topRightLay.addWidget(self.__closeBtn)
+        topRightLay.setContentsMargins(0, 2, 2, 2)
+
         lay = QHBoxLayout()
-        lay.setAlignment(Qt.AlignTop | Qt.AlignLeft)
-        lay.addWidget(self.__returnToBigModeBtn)
-        lay.setContentsMargins(2, 2, 2, 0)
+        lay.addLayout(topLeftLay)
+        lay.addLayout(topRightLay)
+        lay.setContentsMargins(0, 0, 0, 0)
+
         topWidget.setLayout(lay)
 
         middleWidget = QWidget()
@@ -65,6 +80,7 @@ class PipInterfaceWidget(QWidget):
         mainWidget.setLayout(lay)
 
         self.setLayout(lay)
+        self.raise_()
 
     def __playPause(self, f):
         if f:
