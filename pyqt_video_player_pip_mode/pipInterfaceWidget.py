@@ -1,5 +1,5 @@
 from PyQt5.QtCore import Qt
-from PyQt5.QtWidgets import QWidget, QPushButton, QHBoxLayout, QVBoxLayout, QProgressBar, qApp
+from PyQt5.QtWidgets import QWidget, QHBoxLayout, QVBoxLayout, QProgressBar, qApp
 from pyqt_resource_helper import PyQtResourceHelper
 from pyqt_svg_icon_pushbutton import SvgIconPushButton
 
@@ -13,8 +13,8 @@ class PipInterfaceWidget(QWidget):
 
     def __initVal(self):
         self.__returnToBigModeBtn = SvgIconPushButton()
-        self.__closeBtn = QPushButton('🗙')
-        self.__playPauseBtn = QPushButton('⏸')
+        self.__closeBtn = SvgIconPushButton()
+        self.__playPauseBtn = SvgIconPushButton()
         self.__videoProgressBar = QProgressBar()
 
     def __initUi(self):
@@ -31,11 +31,9 @@ class PipInterfaceWidget(QWidget):
 
         self.__videoProgressBar.setTextVisible(False)
 
-        PyQtResourceHelper.setStyleSheet([self.__returnToBigModeBtn, self.__closeBtn, self.__playPauseBtn], ['style/button.css'])
-        self.__closeBtn.setIcon('ico/pip.svg')
-
-        self.__returnToBigModeBtn.setMaximumSize(self.__returnToBigModeBtn.sizeHint())
-        self.__closeBtn.setMaximumSize(self.__closeBtn.sizeHint())
+        self.__returnToBigModeBtn.setIcon('ico/pip.svg')
+        self.__closeBtn.setIcon('ico/close.svg')
+        self.__playPauseBtn.setIcon('ico/pause.svg')
 
         PyQtResourceHelper.setStyleSheet([self.__videoProgressBar], ['style/progressbar.css'])
 
@@ -85,9 +83,9 @@ class PipInterfaceWidget(QWidget):
 
     def __playPause(self, f):
         if f:
-            self.__playPauseBtn.setText('⏵')
+            self.__playPauseBtn.setIcon('ico/play.svg')
         else:
-            self.__playPauseBtn.setText('⏸')
+            self.__playPauseBtn.setIcon('ico/pause.svg')
 
     def getReturnToBigModeBtn(self):
         return self.__returnToBigModeBtn
