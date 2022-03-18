@@ -8,7 +8,7 @@ setup(
     license='MIT',
     packages=find_packages(),
     package_data={'pyqt_video_player_pip_mode.style': ['button.css', 'progressbar.css'],
-                  'pyqt_video_player_pip_mode.ico': ['window.png']},
+                  'pyqt_video_player_pip_mode.ico': ['pip.svg']},
     description='PyQt Video Player PIP Mode',
     url='https://github.com/yjg30737/pyqt-video-player-pip-mode.git',
     install_requires=[
