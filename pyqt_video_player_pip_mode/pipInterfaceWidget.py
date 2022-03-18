@@ -33,7 +33,7 @@ class PipInterfaceWidget(QWidget):
 
         self.__returnToBigModeBtn.setIcon('ico/pip.svg')
         self.__closeBtn.setIcon('ico/close.svg')
-        self.__playPauseBtn.setIcon('ico/pause.svg')
+        self.__playPauseBtn.setIcon('ico/play.svg')
 
         PyQtResourceHelper.setStyleSheet([self.__videoProgressBar], ['style/progressbar.css'])
 
@@ -83,9 +83,9 @@ class PipInterfaceWidget(QWidget):
 
     def __playPause(self, f):
         if f:
-            self.__playPauseBtn.setIcon('ico/play.svg')
-        else:
             self.__playPauseBtn.setIcon('ico/pause.svg')
+        else:
+            self.__playPauseBtn.setIcon('ico/play.svg')
 
     def getReturnToBigModeBtn(self):
         return self.__returnToBigModeBtn
