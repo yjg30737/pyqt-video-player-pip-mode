@@ -1,7 +1,7 @@
 from PyQt5.QtCore import Qt, pyqtSignal
 from PyQt5.QtWidgets import QWidget, QHBoxLayout, QVBoxLayout, QProgressBar, qApp
 from pyqt_resource_helper import PyQtResourceHelper
-from pyqt_svg_icon_pushbutton import SvgIconPushButton
+from pyqt_svg_button import SvgButton
 
 
 class PipInterfaceWidget(QWidget):
@@ -13,9 +13,9 @@ class PipInterfaceWidget(QWidget):
         self.__initUi()
 
     def __initVal(self):
-        self.__returnToBigModeBtn = SvgIconPushButton()
-        self.__closeBtn = SvgIconPushButton()
-        self.__playPauseBtn = SvgIconPushButton()
+        self.__returnToBigModeBtn = SvgButton()
+        self.__closeBtn = SvgButton()
+        self.__playPauseBtn = SvgButton()
         self.__videoProgressBar = QProgressBar()
 
     def __initUi(self):
