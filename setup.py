@@ -9,7 +9,7 @@ setup(
     packages=find_packages(),
     package_data={'pyqt_video_player_pip_mode.style': ['progressbar.css'],
                   'pyqt_video_player_pip_mode.ico': ['pip.svg', 'close.svg', 'play.svg', 'pause.svg']},
-    description='PyQt Video Player PIP Mode',
+    description='PyQt video player in PIP(Picture-in-picture) mode',
     url='https://github.com/yjg30737/pyqt-video-player-pip-mode.git',
     install_requires=[
         'PyQt5>=5.15',
