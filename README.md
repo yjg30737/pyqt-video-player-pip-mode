@@ -9,7 +9,7 @@ PyQt video player in PIP(Picture-in-picture) mode
 
 ## Included Package
 * <a href="https://github.com/yjg30737/pyqt-resource-helper.git">pyqt-resource-helper</a>
-* <a href="https://github.com/yjg30737/pyqt-svg-icon-pushbutton.git">pyqt-svg-icon-pushbutton</a>
+* <a href="https://github.com/yjg30737/pyqt-svg-button.git">pyqt-svg-button</a>
 
 ## Feature
 * Frameless, movable.
@@ -39,7 +39,7 @@ When mouse cursor is over the pip window, interface will be shown.
 
 ![image](https://user-images.githubusercontent.com/55078043/153712864-6e831c7d-d645-4ab5-81b5-c7ffa9a42517.png)
 
-When mouse cursor leaves, interface will be invisible.
+When mouse cursor leaves, interface will be hidden.
 
 ![image](https://user-images.githubusercontent.com/55078043/153712843-bdafd289-fefe-4978-94c5-66ec2cf4646d.png)
 
