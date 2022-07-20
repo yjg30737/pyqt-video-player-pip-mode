@@ -1,5 +1,5 @@
 # pyqt-video-player-pip-mode
-PyQt Video Player PIP Mode
+PyQt video player in PIP(Picture-in-picture) mode
 
 ## Requirements
 * PyQt5 >= 5.15
